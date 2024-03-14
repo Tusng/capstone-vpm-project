@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"></div>
+    <div>
+        <h1>Virtual Property Management</h1>
+    </div>
+    <nav>
+		<ol>
+	        <li class="crumb"><a href="./home.html">Home</a></li>
+	        <li class="crumb"><a href="./property.html">Property</a></li>
+	    </ol>
+	</nav>
+
+    <div>
+        <h2>Enter Your Property</h2>
+        <form id="property">
+			<label for="address-input"><b>Address:</b></label>
+			<input type="text" id="address-input"/>
+
+			<label for="city-input"><b>City:</b></label>
+			<input type="text" id="city-input"/>
+
+            <label for="state-input"><b>State:</b></label>
+            <input type="text" id="state-input"/>
+
+            <lable for="zipCode-input"><b>Zip Code:</b></lable>
+            <input type="text" id="zipCode-input"/>
+
+            <label for="status-input"><b>Status?</b> (<i>Vacant/Occupied</i>)</label>
+            <input type="text" id="status-input"/>
+            
+			<input type="submit">
+		</form>
+    </div>
+
+    <div>
+        <h2>Get Your Property List</h2>
+        <button id="list">Get List</button>
+    </div>
+    <section id="propertyList"></section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
