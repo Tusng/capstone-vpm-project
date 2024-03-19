@@ -21,7 +21,7 @@ function handleSubmit(evt) {
 	
     axios.post('http://localhost:3000/input/', body)
         .then((res) => {
-            console.log(response)
+            console.log(res)
         })
         .catch(err => console.log(err))
 
@@ -35,13 +35,14 @@ function getProperties() {
     axios.get('http://localhost:3000/properties/')
         .then(res => {
             res.data.forEach(element => {
+                console.log(element);
                 let propertyCard = `<div class="property-card">
                     <h2>Your Property</h2>
                     <h3>Address: ${element.address}</h3>
                     <h3>City: ${element.city}</h3>
                     <h3>State: ${element.state}</h3>
-                    <h3>Zip Code: ${element.zipCode}</h3>
-                    <h3>Status: ${element.propertyStatus}</h3>
+                    <h3>Zip Code: ${element.zipcode}</h3>
+                    <h3>Status: ${element.status}</h3>
                     <button onclick="deleteCard(${element['property_id']})">Delete</button>
                     </div>
                 `
@@ -52,7 +53,7 @@ function getProperties() {
 }
 
 //
-function deleteCard() {
+function deleteCard(id) {
     axios.delete(`http://localhost:3000/properties/${id}`)
     .then(() => getProperties())
     .catch(err => console.log(err))
